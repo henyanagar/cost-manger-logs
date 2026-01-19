@@ -7,9 +7,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3001;
 
 // Connect to MongoDB then start server
-mongoose.connect(process.env.MONGODB_URI, {
-    dbName: process.env.DB_NAME
-})
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Logs Service: Connected to MongoDB');
         logger.info('Logs Service connected to MongoDB');
