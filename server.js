@@ -7,6 +7,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3001;
 
 // Connect to MongoDB then start server
+// If MONGODB_URI includes database name, dbName option is not needed
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Logs Service: Connected to MongoDB');

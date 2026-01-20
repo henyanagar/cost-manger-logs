@@ -23,6 +23,9 @@ const logSchema = new mongoose.Schema({
     method: String,
     url: String,
     statusCode: Number
+}, {
+    versionKey: false,
+    collection: 'logs'
 });
 
 module.exports = mongoose.model('Log', logSchema);

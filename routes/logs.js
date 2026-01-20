@@ -38,12 +38,12 @@ router.post('/add', async (req, res) => {
             });
         }
 
-        // Create new log entry
+        // Create new log entry with descriptive message
         const newLog = new Log({
             service: service || 'unknown',
             level: level,
             time: time ? new Date(time) : new Date(),
-            msg: msg,
+            msg: `Add new log - ${msg}`, // ✅ Keep your friendly prefix!
             method: method || null,
             url: url || null,
             statusCode: statusCode || null
@@ -56,8 +56,7 @@ router.post('/add', async (req, res) => {
         logger.error(`Error creating log: ${err.message}`);
         res.status(500).json({
             id: 'LOG_CREATE_ERROR',
-            message: 'Failed to create log',
-            error: err.message
+            message: 'Failed to create log'
         });
     }
 });

@@ -23,9 +23,7 @@ async function logToMongo(level, msg, req, res) {
             msg: msg,
             method: req ? req.method : null,
             url: req ? req.originalUrl : null,
-            statusCode: res ? res.statusCode : null,
-            pid: process.pid,
-            hostname: 'logs-service'
+            statusCode: res ? res.statusCode : null
         });
     } catch (err) {
         // If MongoDB save fails, at least log the error
