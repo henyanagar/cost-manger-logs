@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/logs', logsRoutes);
+app.use('/api', logsRoutes);
 
 // 404 handler
 app.use((req, res) => {

@@ -5,7 +5,7 @@ const Log = require('../models/log');
 const { logger } = require('../logger/pino');
 
 // GET /api/logs - get all logs (REQUIRED by project)
-router.get('/', async (req, res) => {
+router.get('/logs', async (req, res) => {
     try {
         logger.info('Accessing GET /api/logs endpoint');
 
